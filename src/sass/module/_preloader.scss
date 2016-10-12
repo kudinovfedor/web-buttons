@@ -1,0 +1,76 @@
+/* ===================================================== */
+/* ====================  PRELOADER  ==================== */
+/* ===================================================== */
+$preloader-size: 10px;
+
+%corners {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.preloader {
+  $size: $preloader-size;
+  $bg-color: #000;
+  display: none;
+  background: rgba($bg-color, .95) image-url("spin.gif") center center no-repeat;
+  position: fixed;
+  z-index: 9998;
+  @extend %corners;
+
+  .lt-ie9 &,
+  .no-rgba & {
+    background: $bg-color image-url("spin.gif") center center no-repeat;
+  }
+
+  .cssanimations & {
+    background: rgba($bg-color, .95);
+  }
+
+  &:after {
+    .cssanimations & {
+      content: "";
+      margin: auto;
+      position: absolute;
+      left: round(($size * 5 / -2));
+      z-index: 9999;
+      width: $size;
+      height: $size;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      @extend %corners;
+      @include animation(loader 1s linear infinite alternate);
+    }
+  }
+
+  .no-js & {
+    display: none;
+  }
+
+}
+
+@include keyframes(loader) {
+  $color: #fff;
+  $size2: $preloader-size * 2;
+  $size4: $preloader-size * 4;
+
+  0% {
+    background-color: rgba($color, 1);
+    @include box-shadow($size2 0 0 rgba($color, .2), $size4 0 0 rgba($color, .2));
+  }
+
+  25% {
+    background-color: rgba($color, .4);
+    @include box-shadow($size2 0 0 rgba($color, 1), $size4 0 0 rgba($color, .2));
+  }
+
+  75% {
+    background-color: rgba($color, .4);
+    @include box-shadow($size2 0 0 rgba($color, .2), $size4 0 0 rgba($color, 1));
+  }
+}
+
+/* ========================================================= */
+/* ====================  END PRELOADER  ==================== */
+/* ========================================================= */

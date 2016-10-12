@@ -1,0 +1,100 @@
+/* ====================  FORMS  ==================== */
+form {
+  max-width: 100%;
+  margin-bottom: $base-margin;
+  position: relative;
+}
+
+fieldset {}
+
+legend {}
+
+label {}
+
+select,
+textarea,
+[type="text"],
+[type="tel"],
+[type="url"],
+[type="email"],
+[type="search"],
+[type="number"],
+[type="password"] {
+  border: 1px solid #ccc;
+  margin-bottom: $base-margin;
+  padding: 8px 10px;
+
+  &:focus {}
+
+  &:disabled {}
+
+  &.error {}
+}
+
+[type="radio"],
+[type="checkbox"] {
+  &:disabled,
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+@include input-placeholder {
+  color: #afafaf;
+  text-overflow: ellipsis;
+}
+
+input,
+textarea {
+  //@include input-placeholder {
+  //  color: #afafaf;
+  //  text-overflow: ellipsis;
+  //}
+  //
+  //&:focus {
+  //  @include input-placeholder {
+  //    color: transparent;
+  //    @include opacity(0);
+  //  }
+  //}
+
+  &.invalid,
+  &:required:invalid {}
+
+  &.valid,
+  &:required:valid {}
+}
+
+[type="submit"] {
+  &:hover {}
+
+  &:focus {}
+
+  &:disabled {}
+}
+
+[type="reset"],
+[type="button"] {
+  &:hover {}
+
+  &:focus {}
+
+  &:disabled {}
+}
+
+[type="file"] {
+  &:disabled {}
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+select {}
+
+optgroup {}
+
+option {}
+
+/* ====================  END FORMS  ==================== */

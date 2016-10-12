@@ -1,0 +1,22 @@
+// IMAGE PLACEHOLDER
+%img-left {
+  float: left;
+  margin-right: $base-margin;
+  margin-bottom: $base-margin;
+}
+
+%img-center {
+  display: block;
+  margin: $base-margin auto;
+}
+
+%img-right {
+  float: right;
+  margin-bottom: $base-margin;
+  margin-left: $base-margin;
+}
+
+%img-responsive {display: block; height: auto; max-width: 100%;}
+%img-full-width {width: 100%;}
+%img-circle {@include border-radius(50%);}
+%img-rounded {@include border-radius();}

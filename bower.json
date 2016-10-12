@@ -1,0 +1,149 @@
+{
+  "name": "fk-template",
+  "version": "1.0.0",
+  "description": "Workpieces code and structure that I use in every project",
+  "main": "gulpfile.js",
+  "authors": [
+    "Kudinov Fedor"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "HTML5",
+    "CSS3",
+    "JS",
+    "jQuery",
+    "Pug(Jade)",
+    "Compass+Sass",
+    "Sprites",
+    "Favicon",
+    "SVG",
+    "SMACSS",
+    "Ruby",
+    "gem",
+    "Node",
+    "npm",
+    "Gulp",
+    "Modernizr",
+    "Bower",
+    "Browsersync",
+    "ESLint",
+    "JSHint",
+    "HTMLHint",
+    "Autoprefixer",
+    "Babel",
+    "Webpack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kudinovfedor/fk-template.git"
+  },
+  "homepage": "https://github.com/kudinovfedor/fk-template",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "device.js": "devicejs#~0.2.7",
+    "html5shiv": "~3.7.3",
+    "jquery": "~1.12.4 < 2",
+    "jquery-form-styler": "jquery.form-styler#^1.7.6",
+    "modernizr": "~3.3.1",
+    "pixlayout": "~0.9.7",
+    "respond": "~1.4.2",
+    "jquery.inputmask": "^3.3.3",
+    "jquery-validation": "^1.15.1",
+    "magnific-popup": "maginificantpopup#^1.1.0",
+    "jQuery.mmenu": "^5.7.4",
+    "select2": "select2-ng#^4.0.3",
+    "slick-carousel": "^1.6.0",
+    "ion.rangeSlider": "ionrangeslider#^2.1.4",
+    "compass-mixins": "^1.0.2",
+    "jquery-migrate-official": "^1.4.1 < 3"
+  },
+  "overrides": {
+    "device.js": {
+      "main": [
+        "./lib/device.min.js"
+      ]
+    },
+    "html5shiv": {
+      "main": [
+        "./dist/html5shiv.min.js"
+      ]
+    },
+    "jquery": {
+      "main": [
+        "./dist/jquery.min.js"
+      ]
+    },
+    "jquery-form-styler": {
+      "main": [
+        "./jquery.formstyler.min.js"
+      ]
+    },
+    "modernizr": {
+      "ignore": true
+    },
+    "pixlayput": {
+      "main": [
+        "./jquery.pixlayout.min.js"
+      ]
+    },
+    "respond": {
+      "main": [
+        "./dest/respond.min.js"
+      ]
+    },
+    "jquery.inputmask": {
+      "main": [
+        "./dist/min/inputmask/inputmask.min.js",
+        "./dist/min/inputmask/jquery.inputmask.min.js"
+      ]
+    },
+    "jquery-validation": {
+      "main": [
+        "./dist/jquery.validate.min.js"
+      ]
+    },
+    "magnific-popup": {
+      "main": [
+        "./dist/jquery.magnific-popup.min.js"
+      ]
+    },
+    "jQuery.mmenu": {
+      "main": [
+        "./dist/js/jquery.mmenu.all.min.js"
+      ]
+    },
+    "select2": {
+      "main": [
+        "./dist/js/select2.min.js"
+      ]
+    },
+    "slick-carousel": {
+      "main": [
+        "./slick/slick.min.js"
+      ]
+    },
+    "ion.rangeSlider": {
+      "main": [
+        "./js/ion.rangeSlider.min.js"
+      ]
+    },
+    "compass-mixins": {
+      "ignore": true
+    },
+    "jquery-migrate-official": {
+      "ignore": true
+    }
+  }
+}

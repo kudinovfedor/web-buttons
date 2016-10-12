@@ -1,0 +1,22 @@
+.lt-ie8 .browserupgrade {
+  background-color: #ccc;
+  color: #000;
+  margin: 0;
+  padding: .3em 0;
+  text-align: center;
+}
+
+.ie9 .gradient {
+  filter: none;
+}
+
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+.lt-ie9 svg,
+.no-svg svg {
+  display: none;
+}
+
+/*# sourceMappingURL=ie.css.map */

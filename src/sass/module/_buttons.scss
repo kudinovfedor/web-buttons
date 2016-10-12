@@ -1,0 +1,39 @@
+/* =================================================== */
+/* ====================  BUTTONS  ==================== */
+/* =================================================== */
+%btn {
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: normal;
+  outline: 0;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  @include border-radius(0);
+  @include box-shadow(none);
+  @include transition(none);
+  @include touch-action(manipulation);
+  @include user-select(none);
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:active {}
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}
+
+/* ======================================================= */
+/* ====================  END BUTTONS  ==================== */
+/* ======================================================= */

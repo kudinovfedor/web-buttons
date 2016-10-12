@@ -1,0 +1,54 @@
+%rotate-0 {@include transform(rotate(0deg));}
+
+%rotate-45deg {@include transform(rotate(45deg));}
+%rotate-90deg {@include transform(rotate(90deg));}
+%rotate-135deg {@include transform(rotate(135deg));}
+%rotate-180deg {@include transform(rotate(180deg));}
+%rotate-225deg {@include transform(rotate(225deg));}
+%rotate-270deg {@include transform(rotate(270deg));}
+%rotate-315deg {@include transform(rotate(315deg));}
+%rotate-360deg {@include transform(rotate(360deg));}
+
+%rotate-45deg-minus {@include transform(rotate(-45deg));}
+%rotate-90deg-minus {@include transform(rotate(-90deg));}
+%rotate-135deg-minus {@include transform(rotate(-135deg));}
+%rotate-180deg-minus {@include transform(rotate(-180deg));}
+%rotate-225deg-minus {@include transform(rotate(-225deg));}
+%rotate-270deg-minus {@include transform(rotate(-270deg));}
+%rotate-315deg-minus {@include transform(rotate(-315deg));}
+%rotate-360deg-minus {@include transform(rotate(-360deg));}
+
+%skewX-45deg {@include transform(skewX(45deg));}
+%skewX-45deg-minus {@include transform(skewX(-45deg));}
+%skewY-45deg {@include transform(skewY(45deg));}
+%skewY-45deg-minus {@include transform(skewY(-45deg));}
+
+%translate-0 {@include transform(translate(0, 0));}
+
+%translate-0-50 {@include transform(translate(0, 50%));}
+%translate-50-50 {@include transform(translate(50%, 50%));}
+%translate-50-100 {@include transform(translate(50%, 100%));}
+
+%translate-100-0 {@include transform(translate(100%, 0));}
+%translate-100-50 {@include transform(translate(100%, 50%));}
+%translate-100-100 {@include transform(translate(100%, 100%));}
+
+%translate-0-50-minus {@include transform(translate(0, -50%));}
+%translate-50-50-minus {@include transform(translate(-50%, -50%));}
+%translate-50-100-minus {@include transform(translate(-50%, -100%));}
+
+%translate-100-0-minus {@include transform(translate(-100%, 0));}
+%translate-100-50-minus {@include transform(translate(-100%, -50%));}
+%translate-100-100-minus {@include transform(translate(-100%, -100%));}
+
+%translateX-0 {@include transform(translateX(0));}
+%translateX-50 {@include transform(translateX(50%));}
+%translateX-100 {@include transform(translateX(100%));}
+%translateX-50-minus {@include transform(translateX(-50%));}
+%translateX-100-minus {@include transform(translateX(-100%));}
+
+%translateY-0 {@include transform(translateY(0));}
+%translateY-50 {@include transform(translateY(50%));}
+%translateY-100 {@include transform(translateY(100%));}
+%translateY-50-minus {@include transform(translateY(-50%));}
+%translateY-100-minus {@include transform(translateY(-100%));}

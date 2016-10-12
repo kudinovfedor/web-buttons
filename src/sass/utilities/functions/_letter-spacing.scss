@@ -1,0 +1,7 @@
+@function letter-spacing($letter-spacing, $font-size, $unit: px) {
+  @if ($unit == px) {
+    @return ($letter-spacing * $font-size / 1000) * 1px;
+  } @else if ($unit == em) {
+    @return ($letter-spacing / 1000) * 1em;
+  }
+}

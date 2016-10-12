@@ -1,0 +1,76 @@
+//- template.pug
+- var lang = 'en'
+- var ie_classes = false
+- var favicon = true
+- var css_min = false
+- var ie_css_min = false
+- var ie = false
+- var browser_upgrade = false
+- var preloader = true
+- var pixlayout = true
+- var svg_inline = true
+- var common_js_min = false
+- var cdn = false
+doctype html
+if ie_classes
+  <!--[if lt IE 7 ]><html lang="#{lang}" class="ie ie6 lt-ie7 lt-ie8 lt-ie9 no-js"><![endif]-->
+  <!--[if IE 7 ]><html lang="#{lang}" class="ie ie7 lt-ie8 lt-ie9 no-js"><![endif]-->
+  <!--[if IE 8 ]><html lang="#{lang}" class="ie ie8 lt-ie9 no-js"><![endif]-->
+  <!--[if IE 9 ]><html lang="#{lang}" class="ie ie9 lt-ie10 no-js"><![endif]-->
+  <!--[if (gte IE 10)|!(IE)]<!--><html lang="#{lang}" class="no-js"><!--<![endif]-->
+else
+  <html lang="#{lang}" class="no-js">
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, height=device-height, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+  title
+    block title
+      | Template
+  meta(name='description', content='')
+  meta(name='robots', content='index, follow')
+  //saved from url=(0014)about:internet
+  meta(name='HandheldFriendly', content='true')
+  meta(name='MobileOptimized', content='320')
+  meta(name='format-detection', content='date=no, address=no, email=no, telephone=no')
+  meta(name='x-rim-auto-match', content='none')
+  if favicon
+    include ../core/favicon
+  //- Place favicon.ico in the root directory
+  link(href='favicon.ico', rel='shortcut icon')
+  if ie
+    //- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading
+    <!--[if IEMobile]>
+    meta(http-equiv='cleartype', content='on')
+    <![endif]-->
+  if !css_min
+    link(href='css/main.css', rel='stylesheet', media='all')
+  else
+    link(href='css/main.min.css', rel='stylesheet', media='all')
+  if ie
+    include ../core/ie-css
+    include ../core/ie-script
+body
+  if browser_upgrade
+    include ../core/browser-upgrade
+  block content
+  if preloader
+    include ../core/preloader
+  if svg_inline
+    include ../core/svg-inline
+  //- Scripts queries
+  if cdn
+    script(src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', async=false, defer=false)
+    script(src='//code.jquery.com/jquery-1.12.4.min.js', async=false, defer=false)
+  else
+    script(src='js/libs/modernizr.min.js', async=false, defer=false)
+    script(src='js/libs/jquery.min.js', async=false, defer=false)
+  block script
+  //- Custom scripts
+  if !common_js_min
+    script(src='js/common.js', async=false, defer=false)
+  else
+    script(src='js/common.min.js', async=false, defer=false)
+  if pixlayout
+    include ../core/pixlayout
+</html>

@@ -1,0 +1,61 @@
+// VARIABLES
+$prefix-for-webkit: true !default;
+$prefix-for-mozilla: true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera: true !default;
+$prefix-for-spec: true !default;
+
+$image-url-path: "../img/" !default;
+$font-url-path: "../fonts/" !default;
+
+$body-bg: #fff !default;
+$body-color: #000 !default;
+
+$em-base: 16px !default;
+
+$font-family-sans-serif: "Arial", "Helvetica", sans-serif;
+$font-family-serif: "Georgia", "Times New Roman", "Times", serif;
+$font-family-monospace: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
+$font-family-base: $font-family-sans-serif;
+
+$base-unit: "px" !default;
+$fk-base-font-family: $font-family-sans-serif !default;
+$fk-base-font-size: 14px !default;
+$fk-base-photoshop-line-height: 20 !default;
+$fk-base-line-height: ($fk-base-photoshop-line-height / ($fk-base-font-size / 1px)) !default;
+
+$font-size-h1: floor(($fk-base-font-size * 2.6)) !default;
+$font-size-h2: floor(($fk-base-font-size * 2.15)) !default;
+$font-size-h3: ceil(($fk-base-font-size * 1.7)) !default;
+$font-size-h4: ceil(($fk-base-font-size * 1.25)) !default;
+$font-size-h5: $fk-base-font-size !default;
+$font-size-h6: ceil(($fk-base-font-size * .85)) !default;
+
+$headings-margin-bottom: 10px !default;
+$headings-font-family: inherit !default;
+$headings-font-weight: bold !default;
+$headings-line-height: 1.1 !default;
+$headings-color: inherit !default;
+
+$link-color: inherit !default;
+$link-decoration: underline !default;
+$link-hover-color: inherit !default;
+$link-hover-decoration: none !default;
+
+$base-margin: 10px !default;
+$base-padding: 10px !default;
+
+$base-border-radius: 4px !default;
+
+$m0: 0 !default;
+$m1: 10px !default;
+$m2: 20px !default;
+$m3: 30px !default;
+
+$p0: 0 !default;
+$p1: 10px !default;
+$p2: 20px !default;
+$p3: 30px !default;
+
+$scroll-behavior: false !default;
+$font-smoothing: true !default;

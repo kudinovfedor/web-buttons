@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Home page
+  </title>
+  <meta name="description" content="">
+  <meta name="robots" content="index, follow">
+  <!--saved from url=(0014)about:internet-->
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="320">
+  <meta name="format-detection" content="date=no, address=no, email=no, telephone=no">
+  <meta name="x-rim-auto-match" content="none">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="img/favicon/manifest.json">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="My app">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="My app">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <link href="favicon.ico" rel="shortcut icon">
+  <link href="css/main.css" rel="stylesheet" media="all">
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="preloader"></div>
+  <div class="is-hidden"></div>
+  <!-- Scripts queries-->
+  <script src="js/all.min.js"></script>
+  <!-- Custom scripts-->
+  <script src="js/common.js"></script>
+  <!-- Pixel Perfect scripts-->
+  <script src="js/libs/jquery.pixlayout.min.js"></script>
+  <script>
+    $(function () {
+      $.pixlayout({
+        src: 'img/layout-home.jpg',
+        //src: 'img/layout-home-mob.jpg',
+        opacity: 0.6,
+        step: 1,
+        top: 0,
+        zindex: 999,
+        clip: true,
+        center: true,
+        fixed: false,
+        show: true,
+        pervious: true
+      });
+      $('#pxl_wrap').css({boxSizing: "content-box"});
+      setTimeout(function () {
+        var pxl_pic = $('.pxl_pic').find('img');
+        pxl_pic.attr({width: pxl_pic.width(), height: pxl_pic.height()});
+      }, 200);
+    });
+  </script>
+</body></html>

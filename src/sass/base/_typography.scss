@@ -1,0 +1,181 @@
+/* ====================  TYPOGRAPHY  ==================== */
+
+// Headings
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $headings-color;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-top: 0;
+  margin-bottom: $headings-margin-bottom;
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+}
+
+h6 {
+  font-size: $font-size-h6;
+}
+
+// Text elements
+
+p {
+  margin-top: 0;
+  margin-bottom: $base-margin;
+}
+
+small {}
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:link {}
+
+  &:visited {}
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:active {}
+
+  &:focus {}
+
+  &[href^="http"],
+  &[href^="www."] {
+    cursor: alias;
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 $base-margin;
+  border-left: 5px solid #eee;
+}
+
+abbr,
+acronym {
+  cursor: help;
+  border-bottom: 1px dotted #999;
+}
+
+address {
+  margin: 0 0 $base-margin;
+  font-style: italic;
+}
+
+// Lists
+
+ul,
+ol {
+  margin: 0 0 $base-margin;
+  padding-left: 20px;
+
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+
+  li {
+    list-style-position: inside;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+dl {
+  margin: 0 0 $base-margin;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: $base-margin;
+}
+
+// Tables
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  margin-bottom: $base-margin;
+}
+
+caption {
+  caption-side: bottom;
+  font-weight: bold;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+thead {}
+
+tbody {}
+
+tfoot {}
+
+// Img, Video, Object, Embed
+
+img,
+video,
+object,
+embed {
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+  vertical-align: middle;
+}
+
+/* ====================  END TYPOGRAPHY  ==================== */

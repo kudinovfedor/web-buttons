@@ -1,0 +1,134 @@
+/* ====================  FORMSTYLER <input type="number">  ==================== */
+.jq-number {
+  @include inline-block;
+  padding: 0 36px 0 0;
+  position: relative;
+
+  .focused {
+    .jq-number__field {
+      border: 1px solid #5794bf;
+    }
+  }
+
+  &.disabled {
+    .jq-number__field,
+    .jq-number__spin {
+      @include box-shadow(none);
+      background: #f5f5f5;
+      border-color: #ccc;
+      color: #888;
+    }
+
+    .jq-number__spin {
+      &:after {
+        border-bottom-color: #aaa;
+      }
+
+      &.minus {
+        &:after {
+          border-top-color: #aaa;
+        }
+      }
+    }
+  }
+}
+
+.jq-number__field {
+  @include box-shadow(inset 1px 1px 0 #f1f1f1, 0 1px 2px rgba(0, 0, 0, .1));
+  @include border-radius(4px);
+  border: 1px solid #ccc;
+  border-bottom-color: #b3b3b3;
+  width: 100px;
+
+  &:hover {
+    border-color: #b3b3b3;
+  }
+
+  input {
+    @include box-sizing(border-box);
+    @include appearance(textfield);
+    background: none;
+    border: 0;
+    color: #333;
+    font: 14px Arial, sans-serif;
+    outline: none;
+    padding: 8px 9px;
+    text-align: left;
+    width: 100%;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      @include appearance(none);
+      margin: 0;
+    }
+  }
+}
+
+.jq-number__spin {
+  @include border-radius(4px);
+  //@include box-shadow(0 1px 2px rgba(0, 0, 0, .1));
+  @include box-shadow(inset 1px -1px 0 #f1f1f1, inset -1px 0 0 #f1f1f1, 0 1px 2px rgba(0, 0, 0, .1));
+  @include user-select(none);
+  background-color: #f5f5f5;
+  @include background-image(linear-gradient(#fff, #e6e6e6));
+  border: 1px solid #ccc;
+  border-bottom-color: #b3b3b3;
+  cursor: pointer;
+  height: 14px;
+  position: absolute;
+  right: 0;
+  text-shadow: 1px 1px #fff;
+  top: 0;
+  width: 32px;
+
+  &:after {
+    border-bottom: 5px solid #999;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    content: "";
+    height: 0;
+    left: 10px;
+    position: absolute;
+    top: 4px;
+    width: 0;
+  }
+
+  &:hover {
+    background-color: #e6e6e6;
+    @include background-image(linear-gradient(#e6e6e6, #e6e6e6));
+  }
+
+  &:active {
+    @include box-shadow(inset 1px 1px 3px #ddd);
+    background: #f5f5f5;
+  }
+
+  &.minus {
+    bottom: 0;
+    top: auto;
+
+    &:hover {
+      &:after {
+        border-top-color: #000;
+      }
+    }
+
+    &:after {
+      border-bottom: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #999;
+      top: 5px;
+    }
+  }
+
+  &.plus {
+    &:hover {
+      &:after {
+        border-bottom-color: #000;
+      }
+    }
+  }
+}
+
+/* ====================  END FORMSTYLER <input type="number">  ==================== */

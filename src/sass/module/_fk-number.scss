@@ -1,0 +1,111 @@
+/* .fk-number */
+//<span class="fk-number">
+//  <span class="fk-number-field">2</span>
+//  <span class="fk-number-spin">
+//    <span class="fk-number-spin-item fk-number-spin-plus"></span>
+//    <span class="fk-number-spin-item fk-number-spin-minus"></span>
+//  </span>
+//</span>
+.fk-number {
+  $spin-height: 45px;
+  $spin-width: $spin-height;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+
+  &-field,
+  &-spin {
+    float: left;
+    display: block;
+  }
+
+  &-field {
+    width: 100px;
+    min-height: ($spin-height * 2);
+    line-height: ($spin-height * 2);
+    font-size: 24px;
+    font-weight: bold;
+    color: #1f2f44;
+  }
+
+  &-spin {
+    width: $spin-width;
+
+    &-item {
+      @extend %cursor-pointer;
+      display: block;
+      height: $spin-height;
+      line-height: $spin-height;
+      font-size: 20px;
+      position: relative;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background-color: #9da3a5;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+
+      &:after {
+        @include transform(rotate(90deg));
+      }
+
+      &:hover {
+        &:before,
+        &:after {
+          background-color: #242424;
+        }
+      }
+    }
+
+    &-plus {
+      border-bottom: 1px solid #bfc3c4;
+    }
+
+    &-minus {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .fk-number {
+    width: 75px;
+    $spin-height: 35px;
+    $spin-width: $spin-height;
+
+    &-field {
+      width: 40px;
+      min-height: ($spin-height * 2);
+      line-height: ($spin-height * 2);
+      font-size: 18px;
+    }
+
+    &-spin {
+      width: $spin-width;
+      margin-bottom: 5px;
+
+      &-item {
+        height: $spin-height;
+        line-height: $spin-height;
+
+        &:before,
+        &:after {
+          width: 12px;
+        }
+      }
+    }
+  }
+}
+
+/* end .fk-number */

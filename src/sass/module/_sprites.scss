@@ -1,0 +1,32 @@
+/* =================================================== */
+/* ====================  SPRITES  ==================== */
+/* =================================================== */
+
+// * There are 4 types of layout - vertical, horizontal, diagonal, and smart.
+
+// * Using import...
+//$default-sprite-separator: "-";
+//$flags-layout: smart;
+//$flags-sprite-dimensions: true;
+//$flags-sprite-base-class: ".icon-sprite";
+//$flags-spacing: 1px;
+//$disable-magic-sprite-selectors:true;
+//@import "flags/*.png";
+
+//.de{
+//width: flags-sprite-width(de)
+//height: flags-sprite-height(de)
+//@include flags-sprite(de);
+//}
+
+// * The simplest way to use these icon sprites is to let compass give you a class for each sprite:
+// * all-{FOLDER NAME}-sprites
+//@include all-flags-sprites;
+
+// * Or, if you are using a sprite map...
+//$flags: sprite-map("flags/*.png", $spacing: 5px, $layout: smart);
+//.flags { background: $flags; }
+
+/* ======================================================= */
+/* ====================  END SPRITES  ==================== */
+/* ======================================================= */

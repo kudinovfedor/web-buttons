@@ -1,0 +1,40 @@
+# IDE
+## Phpstorm project files
+.idea
+
+## Netbeans project files
+nbproject
+
+# Windows thumbnail cache
+Thumbs.db
+
+# Mac DS_Store Files
+.DS_Store
+
+# Sass cache
+.sass-cache
+
+# Bower components
+bower_components
+
+# Node.js modules
+node_modules
+
+# Source Maps
+*.map
+
+# Archive
+*.rar
+*.zip
+
+# Command Promt
+*.cmd
+
+# Distribute
+dist/
+
+# The original, uncompressed files
+original/
+
+ # Misc
+npm-debug.log

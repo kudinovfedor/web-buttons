@@ -1,0 +1,48 @@
+/* ================================================ */
+/* ====================  TABS  ==================== */
+/* ================================================ */
+// Example tabs structure
+//<div class="fk-tabs">
+//  <ul class="fk-tabs-list">
+//    <li class="active">tabs 1</li>
+//    <li>tabs 2</li>
+//    <li>tabs 3</li>
+//  </ul>
+//  <div class="fk-tab-item active">Text from TABS 1</div>
+//  <div class="fk-tab-item">Text from TABS 2</div>
+//  <div class="fk-tab-item">Text from TABS 3</div>
+//</div>
+
+.fk-tabs-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 10px;
+    font: bold 14px/1.2 "Arial", sans-serif;
+    background-color: #6f6f6f;
+    color: #fff;
+    text-decoration: none;
+
+    &.active {
+      background-color: #555;
+    }
+  }
+
+}
+
+.fk-tab-item {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+/* ==================================================== */
+/* ====================  END TABS  ==================== */
+/* ==================================================== */

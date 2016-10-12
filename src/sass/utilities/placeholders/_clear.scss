@@ -1,0 +1,25 @@
+// CLEARFIX PLACEHOLDER
+%clr {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+%clear-left {clear: left;}
+%clear-right {clear: right;}
+%clear-both {clear: both;}
+%clear-none {clear: none;}
+
+%clearfix {
+  &:after {
+    clear: both;
+    content: " ";
+    display: table;
+  }
+}
