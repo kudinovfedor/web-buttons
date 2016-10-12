@@ -6,59 +6,32 @@
 @import "utilities/mixins";
 @import "utilities/functions";
 
-// FORMSTYLER CSS
-//@import "vendors/formstyler/formstyler-select";
-//@import "vendors/formstyler/formstyler-select-multiple";
-//@import "vendors/formstyler/formstyler-checkbox";
-//@import "vendors/formstyler/formstyler-radio";
-//@import "vendors/formstyler/formstyler-file";
-//@import "vendors/formstyler/formstyler-number";
-
-// ion.rangeSlider CSS
-//@import "vendors/ionrangeslider/ion.rangeSlider";
-//@import "vendors/ionrangeslider/ion.rangeSlider.skinHTML5";
-
-//@import "base/reset";
 @import "base/normalize";
-//@import "base/normalize-v4"; // [Optional]
 @import "base/core";
 @import "base/typography";
 
 @import "utilities/placeholders";
 
 @import "layout/forms";
-//@import "module/gulp-sprite"; // [Optional]
-//@import "module/custom_checkbox_radio"; // [Optional]
-//@import "layout/grid"; // [Optional]
-//@import "module/buttons";
-//@import "module/tabs";
-//@import "module/fk-number"; // [Optional]
-//@import "module/accordion";
-//@import "module/breadcrumbs";
-//@import "module/preloader"; // [Optional]
+@import "module/gulp-sprite"; // [Optional]
+@import "layout/grid"; // [Optional]
+@import "module/buttons";
+@import "module/tabs";
+@import "module/accordion";
+@import "module/preloader"; // [Optional]
 //@import "module/sprites";
 
-//@import "layout/header";
-//@import "layout/nav";
-//@import "layout/main";
-//@import "layout/sidebar";
-//@import "layout/footer";
+@import "layout/header";
+@import "layout/nav";
+@import "layout/main";
+@import "layout/sidebar";
+@import "layout/footer";
 
-//@import "page/home";
-//@import "page/category";
-//@import "page/product";
-//@import "page/cart";
-//@import "page/checkout";
-//@import "page/contact";
+@import "page/home";
 
 //@import "module/modernizr"; // [Optional]
 //@import "module/retina"; // [Optional]
 
 @import "state/state";
 //@import "state/responsive"; // [Optional]
-//@import "state/print"; // [Optional]
-
-//@import "theme/theme"; // [Optional]
-//@import "theme/admin"; // [Optional]
-
-//@import "utilities/debug"; // [Optional]
+@import "fk-buttons";

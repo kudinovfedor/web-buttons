@@ -11,14 +11,9 @@ var gutil = require('gulp-util');
 // System
 var fs = require('fs');
 var del = require('del');
-// HTML
-var htmlhint = require('gulp-htmlhint');
-var html_stylish = require('htmlhint-stylish');
 // Pug (Jade)
 var pug = require('gulp-pug');
-var pug_lint = require('gulp-pug-lint');
 // CSS
-// var cmq = require('gulp-combine-media-queries');
 var cssBase64 = require('gulp-css-base64');
 var autoprefixer = require('gulp-autoprefixer');
 var cleancss = require('gulp-clean-css');
@@ -29,7 +24,6 @@ var scsslint = require('gulp-scss-lint');
 var scss_stylish = require('gulp-scss-lint-stylish2');
 var reporter = scss_stylish({errorsOnly: false});
 // Images
-// var imagemin = require('gulp-imagemin');
 var spritesmith = require('gulp.spritesmith');
 // Favicon.ico
 var realFavicon = require('gulp-real-favicon');
@@ -39,9 +33,6 @@ var svgmin = require('gulp-svgmin');
 var svgstore = require('gulp-svgstore');
 var raster = require('gulp-raster');
 // JS(jQuery)
-var jshint = require('gulp-jshint');
-var hint_stylish = require('jshint-stylish');
-var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 // Gulp useful plugins
 var plumber = require('gulp-plumber');
@@ -50,9 +41,6 @@ var notify = require('gulp-notify');
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var size = require('gulp-size');
-var cache = require('gulp-cached');
-var babel = require("gulp-babel");
-//var filter = require('gulp-filter');
 var zip = require('gulp-zip');
 // LiveReload & Browser Syncing
 var browserSync = require('browser-sync').create();
@@ -67,14 +55,11 @@ var ftp = require('vinyl-ftp');
 var config = {
   // Config Pug (Jade)
   pug: {pretty: true},
-  pug_lint: {'extends': src + '.pug-lintrc'},
   // Config CSS Autoprefixer
   autoprefixer: {
     browsers: ['Explorer >= 6', 'Edge >= 12', 'Firefox >= 2', 'Chrome >= 4', 'Safari >= 3.1', 'Opera >= 10.1', 'iOS >= 3.2', 'OperaMini >= 8', 'Android >= 2.1', 'BlackBerry >= 7', 'OperaMobile >= 12', 'ChromeAndroid >= 47', 'FirefoxAndroid >= 42', 'ExplorerMobile >= 10'],
     cascade: false, add: true, remove: false
   },
-  // Config CSS Combine Media Queries
-  //cmd: {log: false, use_external: false},
   // Config CSS base64
   cssBase64: {
     baseDir: '../img/', maxWeightResource: 10 * 1024,
@@ -106,10 +91,6 @@ var config = {
       }
     }
   },
-  // Config JSHint
-  jshint: {lookup: true, linter: 'jshint'},
-  // Config ESLint
-  eslint: {configFile: src + '.eslintrc.json'},
   // Config BrowserSync
   bs: {
     ui: false, server: {baseDir: src}, port: 8080, ghostMode: {clicks: false, forms: false, scroll: false},
@@ -126,9 +107,7 @@ var config = {
   // Config Gulp zip
   zip: {compress: true},
   // Config FTP
-  ftp: JSON.parse(fs.readFileSync(src + 'ftp.json')),
-  // Config Gulp filter
-  //filter: {restore: true, passthrough: true}
+  ftp: JSON.parse(fs.readFileSync(src + 'ftp.json'))
 };
 
 var path = {
@@ -143,9 +122,6 @@ var path = {
     favicon: [src + 'img/favicon'],
     svg: src + 'img/svg/*.svg',
     js: [src + 'js/common.js'],
-    babel: [src + 'js/common.babel.js'],
-    ie8: [src + 'js/libs/{html5shiv,respond}.min.js'],
-    allJS: [src + 'js/libs/{device,modernizr,jquery}.min.js'],
     zip: ['dist/**/{*,}.*', 'src/**/{*,}.*', '{*,}.*', '!*.{zip,rar}', '!.{git,idea,sass-cache}', '!{bower_components,node_modules}']
   },
   dest: {
@@ -169,8 +145,7 @@ var path = {
     svg: [src + 'img/svg/*.svg'],
     css: [src + 'css/*.css', '!' + src + 'css/*.min.css'],
     sass: [src + 'sass/**/*.scss'],
-    js: [src + 'js/common.js'],
-    babel: [src + 'js/common.babel.js']
+    js: [src + 'js/common.js']
   },
   dist: {
     src: {
@@ -236,14 +211,6 @@ gulp.task('retina1dppx', function () {
     .pipe(gulp.dest(path.dest.svgfallback));
 });
 
-gulp.task('retina2dppx', function () {
-  return gulp.src(path.src.svg)
-    .pipe(plumber({errorHandler: errorAlert}))
-    .pipe(raster({format: 'png', scale: 2}))
-    .pipe(rename({extname: '.png', suffix: '@2x'}))
-    .pipe(gulp.dest(path.dest.svgfallback));
-});
-
 gulp.task('sprite', function () {
   var spriteData =
     gulp.src(path.src.sprite)
@@ -252,34 +219,12 @@ gulp.task('sprite', function () {
   return spriteData.css.pipe(gulp.dest(path.dest.sprite_css));
 });
 
-gulp.task('svg', gulp.series('svg-sprite', gulp.parallel('retina1dppx'/*, 'retina2dppx'*/), 'sprite'));
+gulp.task('svg', gulp.series('svg-sprite', gulp.parallel('retina1dppx'), 'sprite'));
 
-gulp.task('ie8', function () {
-  return gulp.src(path.src.ie8)
-    .pipe(plumber({errorHandler: errorAlert}))
-    .pipe(size(config.fileSize))
-    .pipe(concat('ie8.js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(size(config.fileSize))
-    .pipe(gulp.dest(path.dest.js));
-});
-
-gulp.task('all-js', function () {
-  return gulp.src(path.src.allJS)
-    .pipe(plumber({errorHandler: errorAlert}))
-    .pipe(size(config.fileSize))
-    .pipe(concat('all.js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(size(config.fileSize))
-    .pipe(gulp.dest(path.dest.js));
-});
 
 gulp.task('pug', function () {
   return gulp.src(path.src.pug)
     .pipe(plumber({errorHandler: errorAlert}))
-    //.pipe(pug_lint(config.pug_lint))
     .pipe(pug(config.pug))
     .pipe(gulp.dest(path.dest.pug))
     .pipe(browserSync.stream());
@@ -320,35 +265,11 @@ gulp.task('js', function () {
   return gulp.src(path.src.js)
     .pipe(plumber({errorHandler: errorAlert}))
     .pipe(sourcemaps.init())
-    .pipe(jshint(config.jshint))
-    .pipe(jshint.reporter(hint_stylish))
-    .pipe(eslint(config.eslint))
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('/'))
     .pipe(gulp.dest(path.dest.js));
 });
-
-gulp.task('babel', function () {
-  return gulp.src(path.src.babel)
-    .pipe(babel())
-    .pipe(rename({basename: 'common', suffix: '.es5'}))
-    .pipe(gulp.dest(path.dest.js));
-});
-
-gulp.task('build', gulp.parallel('css', 'js'));
-
-//gulp.task('img', function () {
-//  gulp.src(path.src.img)
-//    .pipe(plumber({errorHandler: errorAlert}))
-//    .pipe(imagemin({
-//      optimizationLevel: 3,
-//      progressive: true
-//    }))
-//    .pipe(gulp.dest(path.dest.img));
-//});
 
 gulp.task('autoprefixer', function () {
   gulp.src(['css/main.css'])
@@ -357,44 +278,10 @@ gulp.task('autoprefixer', function () {
     .pipe(gulp.dest(path.dest.css));
 });
 
-gulp.task('html-hint', function () {
-  return gulp.src(path.src.html)
-    .pipe(plumber({errorHandler: errorAlert}))
-    .pipe(htmlhint(src + '.htmlhintrc'))
-    .pipe(htmlhint.reporter(html_stylish));
-});
-
 gulp.task('scss-lint', function () {
   return gulp.src(path.src.sassLint, {since: gulp.lastRun('scss-lint')})
     .pipe(plumber({errorHandler: errorAlert}))
-    .pipe(cache(scsslint))
     .pipe(scsslint(config.scsslint));
-});
-
-gulp.task('jshint', function () {
-  return gulp.src(path.src.js)
-    .pipe(plumber({errorHandler: errorAlert}))
-    .pipe(jshint(config.jshint))
-    .pipe(jshint.reporter(hint_stylish));
-});
-
-gulp.task('eslint', function () {
-  return gulp.src(path.src.js)
-    .pipe(plumber({errorHandler: errorAlert}))
-    .pipe(eslint(config.eslint))
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
-});
-
-gulp.task('jshint-eslint', function () {
-  return gulp.src(path.src.js)
-    .pipe(plumber({errorHandler: errorAlert}))
-    .pipe(jshint(config.jshint))
-    .pipe(jshint.reporter(hint_stylish))
-    .pipe(eslint(config.eslint))
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
-    .pipe(browserSync.stream());
 });
 
 gulp.task('pug-watch', gulp.parallel('pug', function () {
@@ -648,7 +535,7 @@ gulp.task('deploy', gulp.series('dist', function () {
     password: config.ftp.password, // FTP password, default is anonymous@
     port: 21, // FTP port, default is 21
     log: gutil.log, // Log function
-    parallel: 10, // Number of parallel transfers, default is 3
+    parallel: 10 // Number of parallel transfers, default is 3
   });
   // using base = '.' default is will transfer everything to /public_html correctly
   // turn off buffering in gulp.src for best performance
@@ -664,9 +551,6 @@ gulp.task('default', gulp.parallel('server', function () {
   //gulp.watch(path.watch.sass, gulp.series('compass'));
   gulp.watch(path.watch.sass, gulp.series('sass'));
   gulp.watch(path.watch.sass, gulp.series('scss-lint'));
-  gulp.watch(path.watch.js, gulp.series('jshint-eslint'));
-  gulp.watch(path.watch.babel, gulp.series('babel'));
   gulp.watch(path.watch.sprite, gulp.series('sprite'));
   gulp.watch(path.watch.svg, gulp.series('svg'));
-  gulp.watch(path.watch.html, gulp.series('html-hint'));
 }));

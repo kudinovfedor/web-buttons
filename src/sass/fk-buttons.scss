@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@import "utilities/variables";
+@import "utilities/mixins";
+@import "utilities/functions";
+@import "module/buttons";
+
+$colors: (
+  blue-bibbon: #295cf3, // Синий Крайола [Blue Ribbon]
+  curious-blue: #2397c0, // Тихоокеанский синий  [Curious Blue]
+  purple-heart: #c628e1, // Сине-лиловый [Purple Heart]
+  yukon-gold: #7c840a, // Оливковый [Yukon Gold]
+  la-palma: #109b1a, // Индийский зелёный [La Palma]
+  bourbon: #c06f16, // Шоколадный [Bourbon]
+  citron: #84ae28, // Жёлто-зелёный [Citron]
+  fire: #b33701, // Красное дерево [Fire]
+  brick-red: #d43352, // Яркий пурпурно-красный [Brick Red]
+  luxor-gold: #a48e29, // Тёмный зеленовато-жёлтый [Luxor Gold]
+  tuscany: #c9612e, // Перламутрово-оранжевый [Tuscany]
+  caribbean-green: #00c18c, // Персидский зелёный [Caribbean Green]
+  blue-bell: #8b86c9, // Пурпурное горное величие [Blue Bell]
+  mexican-red: #a03225, // Коричнево-бордовый [Mexican Red]
+  cardinal: #b92130, // Насыщенный красный [Cardinal]
+  sycamore: #8b813c, // Умеренный жёлто-зелёный [Sycamore]
+  bilbao: #2b6d13, // Глубокий жёлто-зелёный [Bilbao]
+  orient: #00667f, // Насыщенный зеленовато-синий [Orient]
+  ming: #337c71, // Ядовито-зелёный [Ming]
+  blue-chill: #119693, // Зелёная сосна Крайола [Blue Chill]
+  purple-heart-dark: #7e24db, // Сине-лиловый [Purple Heart Dark]
+  rope: #8f441c, // Красно-желтовато-коричневый [Rope]
+  claret: #89142e, // Рубиново-красный [Claret]
+  seance: #6a1678, // Персидский индиго [Seance]
+  jewel: #126a52, // Тёмный весенне-зелёный [Jewel]
+  go-ben: #757b4d, // Умеренный желтовато-зелёный [Go Ben]
+  yukon-gold-dark: #817a06, // Оливковый [Yukon Gold Dark]
+  lochmara: #0083c3, // Воды пляжа Бонди [Lochmara]
+  pirate-gold: #b58000, // Глубокий жёлтый [Pirate Gold]
+  green-haze: #009946 // Пигментный зелёный [Green Haze]
+);
+
+.btn { @extend %btn; }
+
+%btn-color-white { color: #fff; }
+
+@each $color-name, $color in $colors {
+  .btn--#{$color-name} {
+    @extend %btn-color-white;
+    background-color: $color;
+
+    &:hover {
+      background-color: darken($color, 10%);
+    }
+  }
+}

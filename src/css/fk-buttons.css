@@ -1,0 +1,289 @@
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  background-color: transparent;
+  outline: 0;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: nowrap;
+  font-weight: normal;
+  color: #000;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn:hover, .btn:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+.btn::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+.btn--blue-bibbon, .btn--curious-blue, .btn--purple-heart, .btn--yukon-gold, .btn--la-palma, .btn--bourbon, .btn--citron, .btn--fire, .btn--brick-red, .btn--luxor-gold, .btn--tuscany, .btn--caribbean-green, .btn--blue-bell, .btn--mexican-red, .btn--cardinal, .btn--sycamore, .btn--bilbao, .btn--orient, .btn--ming, .btn--blue-chill, .btn--purple-heart-dark, .btn--rope, .btn--claret, .btn--seance, .btn--jewel, .btn--go-ben, .btn--yukon-gold-dark, .btn--lochmara, .btn--pirate-gold, .btn--green-haze {
+  color: #fff;
+}
+
+.btn--blue-bibbon {
+  background-color: #295cf3;
+}
+
+.btn--blue-bibbon:hover {
+  background-color: #0c41dd;
+}
+
+.btn--curious-blue {
+  background-color: #2397c0;
+}
+
+.btn--curious-blue:hover {
+  background-color: #1b7595;
+}
+
+.btn--purple-heart {
+  background-color: #c628e1;
+}
+
+.btn--purple-heart:hover {
+  background-color: #a41abc;
+}
+
+.btn--yukon-gold {
+  background-color: #7c840a;
+}
+
+.btn--yukon-gold:hover {
+  background-color: #4f5506;
+}
+
+.btn--la-palma {
+  background-color: #109b1a;
+}
+
+.btn--la-palma:hover {
+  background-color: #0b6d12;
+}
+
+.btn--bourbon {
+  background-color: #c06f16;
+}
+
+.btn--bourbon:hover {
+  background-color: #925511;
+}
+
+.btn--citron {
+  background-color: #84ae28;
+}
+
+.btn--citron:hover {
+  background-color: #65851e;
+}
+
+.btn--fire {
+  background-color: #b33701;
+}
+
+.btn--fire:hover {
+  background-color: #802701;
+}
+
+.btn--brick-red {
+  background-color: #d43352;
+}
+
+.btn--brick-red:hover {
+  background-color: #af2540;
+}
+
+.btn--luxor-gold {
+  background-color: #a48e29;
+}
+
+.btn--luxor-gold:hover {
+  background-color: #7b6b1f;
+}
+
+.btn--tuscany {
+  background-color: #c9612e;
+}
+
+.btn--tuscany:hover {
+  background-color: #9f4d25;
+}
+
+.btn--caribbean-green {
+  background-color: #00c18c;
+}
+
+.btn--caribbean-green:hover {
+  background-color: #008e67;
+}
+
+.btn--blue-bell {
+  background-color: #8b86c9;
+}
+
+.btn--blue-bell:hover {
+  background-color: #6963b9;
+}
+
+.btn--mexican-red {
+  background-color: #a03225;
+}
+
+.btn--mexican-red:hover {
+  background-color: #77251b;
+}
+
+.btn--cardinal {
+  background-color: #b92130;
+}
+
+.btn--cardinal:hover {
+  background-color: #8e1925;
+}
+
+.btn--sycamore {
+  background-color: #8b813c;
+}
+
+.btn--sycamore:hover {
+  background-color: #67602d;
+}
+
+.btn--bilbao {
+  background-color: #2b6d13;
+}
+
+.btn--bilbao:hover {
+  background-color: #1a420b;
+}
+
+.btn--orient {
+  background-color: #00667f;
+}
+
+.btn--orient:hover {
+  background-color: #003d4c;
+}
+
+.btn--ming {
+  background-color: #337c71;
+}
+
+.btn--ming:hover {
+  background-color: #245850;
+}
+
+.btn--blue-chill {
+  background-color: #119693;
+}
+
+.btn--blue-chill:hover {
+  background-color: #0c6866;
+}
+
+.btn--purple-heart-dark {
+  background-color: #7e24db;
+}
+
+.btn--purple-heart-dark:hover {
+  background-color: #651daf;
+}
+
+.btn--rope {
+  background-color: #8f441c;
+}
+
+.btn--rope:hover {
+  background-color: #643014;
+}
+
+.btn--claret {
+  background-color: #89142e;
+}
+
+.btn--claret:hover {
+  background-color: #5c0e1f;
+}
+
+.btn--seance {
+  background-color: #6a1678;
+}
+
+.btn--seance:hover {
+  background-color: #440e4d;
+}
+
+.btn--jewel {
+  background-color: #126a52;
+}
+
+.btn--jewel:hover {
+  background-color: #0b3e30;
+}
+
+.btn--go-ben {
+  background-color: #757b4d;
+}
+
+.btn--go-ben:hover {
+  background-color: #575c39;
+}
+
+.btn--yukon-gold-dark {
+  background-color: #817a06;
+}
+
+.btn--yukon-gold-dark:hover {
+  background-color: #504c04;
+}
+
+.btn--lochmara {
+  background-color: #0083c3;
+}
+
+.btn--lochmara:hover {
+  background-color: #006190;
+}
+
+.btn--pirate-gold {
+  background-color: #b58000;
+}
+
+.btn--pirate-gold:hover {
+  background-color: #825c00;
+}
+
+.btn--green-haze {
+  background-color: #009946;
+}
+
+.btn--green-haze:hover {
+  background-color: #00662f;
+}
+
+/*# sourceMappingURL=fk-buttons.css.map */

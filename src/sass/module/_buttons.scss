@@ -1,28 +1,30 @@
-/* =================================================== */
-/* ====================  BUTTONS  ==================== */
-/* =================================================== */
+//* ====================  BUTTONS  ==================== */
 %btn {
-  border: 1px solid transparent;
   cursor: pointer;
   display: inline-block;
-  font-weight: normal;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  background-color: transparent;
   outline: 0;
   padding: 6px 12px;
   text-align: center;
   text-decoration: none;
   text-shadow: none;
   text-transform: none;
-  vertical-align: middle;
   white-space: nowrap;
+  font-weight: normal;
+  color: #000;
   -webkit-tap-highlight-color: transparent;
   @include border-radius(0);
   @include box-shadow(none);
-  @include transition(none);
+  //@include transition(none);
+  @include transition(.3s);
   @include touch-action(manipulation);
   @include user-select(none);
 
   &:hover,
   &:focus {
+    color: #000;
     text-decoration: none;
   }
 
@@ -33,7 +35,4 @@
     border: 0;
   }
 }
-
-/* ======================================================= */
-/* ====================  END BUTTONS  ==================== */
-/* ======================================================= */
+//* ====================  END BUTTONS  ==================== */
