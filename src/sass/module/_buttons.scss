@@ -1,5 +1,5 @@
 //* ====================  BUTTONS  ==================== */
-%btn {
+@mixin btn {
   cursor: pointer;
   display: inline-block;
   vertical-align: middle;
@@ -10,10 +10,8 @@
   text-align: center;
   text-decoration: none;
   text-shadow: none;
-  text-transform: none;
+  text-transform: uppercase;
   white-space: nowrap;
-  font-weight: normal;
-  color: #000;
   -webkit-tap-highlight-color: transparent;
   @include border-radius(0);
   @include box-shadow(none);
@@ -24,7 +22,6 @@
 
   &:hover,
   &:focus {
-    color: #000;
     text-decoration: none;
   }
 
@@ -34,5 +31,9 @@
     padding: 0;
     border: 0;
   }
+}
+
+%btn {
+  @include btn;
 }
 //* ====================  END BUTTONS  ==================== */

@@ -10,6 +10,9 @@
 @import "base/core";
 @import "base/typography";
 
+// font-awesome-4.6.3
+@import "vendor/font-awesome-4.6.3/font-awesome";
+
 @import "utilities/placeholders";
 
 @import "layout/forms";
@@ -35,3 +38,26 @@
 @import "state/state";
 //@import "state/responsive"; // [Optional]
 @import "fk-buttons";
+
+body { background-color: #0e0202; padding-top: 30px; }
+
+.text-center { text-align: center; }
+
+.col-lg-3, .col-lg-4 { margin-bottom: 30px; }
+
+.row + .row { margin-top: 50px; }
+
+.set {
+  display: block;
+  padding: 40px 0;
+  margin: 0 auto 50px;
+  width: 120px;
+  height: 120px;
+  border: 7px solid rgba(#6b100f, .5);
+  border-radius: 50%;
+  background-color: #d09494;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+  font: normal 25px/1 "Lato", "Arial", sans-serif;
+}

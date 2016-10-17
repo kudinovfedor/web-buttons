@@ -6,27 +6,75 @@ block content
   //- http://chir.ag/projects/name-that-color/#6195ED
   //- http://colorscheme.ru/color-names.html
   //- http://whoyougle.ru/services/color/1A4876
-  .container
-    .row
+  //- https://fonts.google.com/?query=lato&selection.family=Lato
+  //- http://fontawesome.io/
+  - var colors = ['blue-bibbon', 'curious-blue', 'purple-heart', 'yukon-gold', 'la-palma', 'bourbon', 'citron', 'fire', 'brick-red', 'luxor-gold', 'tuscany', 'caribbean-green', 'blue-bell', 'mexican-red', 'cardinal', 'sycamore', 'bilbao', 'orient', 'ming', 'blue-chill', 'purple-heart-dark', 'rope', 'claret', 'seance', 'jewel', 'go-ben', 'yukon-gold-dark', 'lochmara', 'pirate-gold', 'green-haze']
+  - var classIconSet1 = ['fa-rocket', 'fa-cube', 'fa-download', 'fa-envelope'];
+  .container.text-center
+    //.row
+      .col-lg-12: h2.set Set-01
       .col-lg-12
-        .col-lg-2
-          span.btn.btn--yukon-gold test
-          div.btn.btn--yukon-gold test
-          a(href='#').btn.btn--yukon-gold test
-          input(type='submit', value='test').btn.btn--yukon-gold
-          input(type='reset', value='test').btn.btn--yukon-gold
-          input(type='button', value='test').btn.btn--yukon-gold
-          button(type='submit').btn.btn--yukon-gold test
-          button(type='reset').btn.btn--yukon-gold test
-          button(type='button').btn.btn--yukon-gold test
-        .col-lg-2
-          span.btn.btn--bourbon test
-        .col-lg-2
-          span.btn.btn--brick-red test
-        .col-lg-2
-          span.btn.btn--curious-blue test
-        .col-lg-2
-          span.btn.btn--blue-bibbon test
-        .col-lg-2
-          span.btn.btn--la-palma test
+        each val, index in colors
+          .col-lg-3
+            - var shapeClass = 'btn--' + val;
+            //- var fontClass = classIconSet1[index];
+            - var fontClass = 'fa-rocket';
+            span.btn.btn--shape1(class=shapeClass)
+              span.btn--shape1__inner: i.fa(class=fontClass)
+              | Button
+    //.row
+      .col-lg-12: h2.set Set-02
+      .col-lg-12
+        each val, index in colors
+          .col-lg-3
+            - var shapeClass = 'btn--' + val;
+            //- var fontClass = classIconSet1[index];
+            - var fontClass = 'fa-download';
+            span.btn.btn--shape2(class=shapeClass)
+              span.btn--shape2__inner: i.fa(class=fontClass)
+              | Button
+    //.row
+      .col-lg-12: h2.set Set-04
+      .col-lg-12
+        each val, index in colors
+          .col-lg-3
+            - var shapeClass = 'btn--' + val;
+            //- var fontClass = classIconSet1[index];
+            - var fontClass = 'fa-envelope';
+            span.btn.btn--shape4(class=shapeClass)
+              span.btn--shape4__inner: i.fa(class=fontClass)
+              | Button
+    //-.row
+      .col-lg-12: h2.set Set-07
+      .col-lg-12
+        each val in colors
+          .col-lg-3
+            - var shapeClass = 'btn--' + val;
+            span.btn.btn--shape7(class=shapeClass)
+              span.btn--shape7__inner Button
+    //-.row
+      .col-lg-12: h2.set Set-08
+      .col-lg-12
+        each val in colors
+          .col-lg-3
+            - var shapeClass = 'btn--' + val;
+            span.btn.btn--shape8(class=shapeClass) Button
+    //-.row
+      .col-lg-12: h2.set Set-11
+      .col-lg-12
+        each val in colors
+          .col-lg-3
+            - var shapeClass = 'btn--' + val;
+            span.btn.btn--shape11(class=shapeClass)
+              span.btn--shape11__inner Button
+    .row
+      .col-lg-12: h2.set Set-12
+      .col-lg-12
+        each val in colors
+          .col-lg-3
+            - var shapeClass = 'btn--' + val;
+            span.btn.btn--shape12(class=shapeClass)
+              span.btn--shape12__inner-left
+              | Button
+              span.btn--shape12__inner-right
 block script
